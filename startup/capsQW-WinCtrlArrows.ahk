@@ -62,18 +62,6 @@ else
  Send {U+03C0} ; pi
 Return
 
-CapsLock & 1::
-If GetKeyState("Shift")
- Send {U+2776} ; ^1
-else
- Send {U+2776} ; _1
-Return
-CapsLock & 2::
-If GetKeyState("Shift")
- Send {U+278A} ; ^1
-else
- Send {U+278A} ; _1
-Return
 
 CapsLock & k::
 If GetKeyState("Shift")
@@ -82,9 +70,38 @@ else
  Send {U+2096} ;
 Return
 
-CapsLock & 0::
-If GetKeyState("Shift")
- Send {U+2070} ;
-else
- Send {U+2080} ;
+
+SetMouseDelay, 0
+
+CapsLock & Enter::
+Click
+Return
+
+
+
+CapsLock & z::
+send ^c
+send ^t
+send ^v
+send {Enter}
+Return
+
+CapsLock & x::
+send ^w
+Return
+
+CapsLock & Insert::
+SetScrollLockState, On
+Return
+
+
+CapsLock & r::
+send {F13}
+Return
+
+CapsLock & l::
+send console.log();
+send {left}{left}
+sleep, 200
+send {Escape}
 Return
