@@ -96,6 +96,7 @@ Return
 
 
 CapsLock & r::
+send ^s
 send {F13}
 Return
 
@@ -104,4 +105,11 @@ send console.log();
 send {left}{left}
 sleep, 200
 send {Escape}
+Return
+
+Alt & l::
+If GetKeyState("Shift")
+ Send {U+0141} ; Ł
+else
+ Send {U+0142} ; ł
 Return

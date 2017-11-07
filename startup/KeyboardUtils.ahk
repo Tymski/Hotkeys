@@ -27,10 +27,10 @@
 	
 // REFRESHING WEBPAGES
 	
-	F1::
-		MouseClick, left
-		Send {F5}
-		Return
+	//F1::
+	//	MouseClick, left
+	//	Send {F5}
+	//	Return
 		
 		
 // NUMPAD UTILS
