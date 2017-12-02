@@ -55,12 +55,12 @@ else
  Send {U+03C3} ; sigma
 Return
 
-CapsLock & p::
-If GetKeyState("Shift")
- Send {U+03A0} ; Pi
-else
- Send {U+03C0} ; pi
-Return
+; CapsLock & p::
+; If GetKeyState("Shift")
+;  Send {U+03A0} ; Pi
+; else
+;  Send {U+03C0} ; pi
+; Return
 
 
 CapsLock & k::
@@ -107,9 +107,51 @@ sleep, 200
 send {Escape}
 Return
 
-Alt & l::
-If GetKeyState("Shift")
- Send {U+0141} ; Ł
-else
- Send {U+0142} ; ł
+; Alt & l::
+; If GetKeyState("Shift")
+;  Send {U+0141} ; Ł
+; else
+;  Send {U+0142} ; ł
+; Return
+
+CapsLock & o::
+send {Home}
 Return
+
+CapsLock & p::
+send {End}
+Return
+
+CapsLock & ]::
+If GetKeyState("Shift")
+ send {ShiftDown}{End}{ShiftUp}
+else
+ send {End}
+Return
+
+CapsLock & [::
+If GetKeyState("Shift")
+ send {ShiftDown}{Home}{ShiftUp}
+else
+ send {Home}
+Return
+
+; CapsLock & [::
+;     If (GetKeyState("Ctrl")){
+;         send {Ctrl Down}
+;     }
+
+;     If (GetKeyState("Shift")){
+;         send {ShiftDown}
+;     }
+
+;     send {Home}
+
+;     If (GetKeyState("Shift")){
+;         send {ShiftUp}
+;     }
+
+;     If (GetKeyState("Ctrl")){
+;         send {Ctrl Up}
+;     }
+; Return
