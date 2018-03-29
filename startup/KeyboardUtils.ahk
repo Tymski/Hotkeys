@@ -36,6 +36,7 @@
 // NUMPAD UTILS
 	
 	NumpadIns::Ctrl
+	// Use Control PageUp Control PageDown0
 	NumpadClear::Enter
 	//^NumpadLeft::^+Tab
 	//^NumpadRight::^Tab
