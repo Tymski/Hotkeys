@@ -13,19 +13,27 @@ Send, {LWin Down}{RCtrl Down}{Left}{RCtrl Up}{LWin Up}
 return
 
 
+; CapsLock & a::
+; If GetKeyState("Shift")
+;  Send {U+0391} ; Alpha
+; else
+;  Send {U+03B1} ; alpha
+; Return
+
+; CapsLock & b::
+; If GetKeyState("Shift")
+;  Send {U+0392} ; Beta
+; else
+;  Send {U+03B2} ; beta
+; Return
+
+CapsLock & s::
+    Send {Ctrl Down}{PgDn}{Ctrl Up}
+Return
 CapsLock & a::
-If GetKeyState("Shift")
- Send {U+0391} ; Alpha
-else
- Send {U+03B1} ; alpha
+    Send {Ctrl Down}{PgUp}{Ctrl Up}
 Return
 
-CapsLock & b::
-If GetKeyState("Shift")
- Send {U+0392} ; Beta
-else
- Send {U+03B2} ; beta
-Return
 
 CapsLock & c::
 If GetKeyState("Shift")
@@ -48,12 +56,12 @@ else
  Send {U+03B5} ; epislon
 Return
 
-CapsLock & s::
-If GetKeyState("Shift")
- Send {U+03A3} ; Sigma
-else
- Send {U+03C3} ; sigma
-Return
+; CapsLock & s::
+; If GetKeyState("Shift")
+;  Send {U+03A3} ; Sigma
+; else
+;  Send {U+03C3} ; sigma
+; Return
 
 ; CapsLock & p::
 ; If GetKeyState("Shift")
@@ -128,7 +136,7 @@ CapsLock & ]::
 Return
 
 CapsLock & [::
-    presshome()
+    pressend()
     send {{}
 
 Return
@@ -139,7 +147,7 @@ CapsLock & 0::
 Return
 
 CapsLock & 9::
-    presshome()
+    pressend()
     send `(
 Return
 
