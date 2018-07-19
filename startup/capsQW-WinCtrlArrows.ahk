@@ -35,26 +35,26 @@ CapsLock & a::
 Return
 
 
-CapsLock & c::
-If GetKeyState("Shift")
- Send {U+0393} ; Gamma
-else
- Send {U+03B3} ; gamma
-Return
+; CapsLock & c::
+; If GetKeyState("Shift")
+;  Send {U+0393} ; Gamma
+; else
+;  Send {U+03B3} ; gamma
+; Return
 
-CapsLock & d::
-If GetKeyState("Shift")
- Send {U+0394} ; Delta
-else
- Send {U+03B4} ; delta
-Return
+; CapsLock & d::
+; If GetKeyState("Shift")
+;  Send {U+0394} ; Delta
+; else
+;  Send {U+03B4} ; delta
+; Return
 
-CapsLock & e::
-If GetKeyState("Shift")
- Send {U+0395} ; Epislon
-else
- Send {U+03B5} ; epislon
-Return
+; CapsLock & e::
+; If GetKeyState("Shift")
+;  Send {U+0395} ; Epislon
+; else
+;  Send {U+03B5} ; epislon
+; Return
 
 ; CapsLock & s::
 ; If GetKeyState("Shift")
@@ -71,12 +71,12 @@ Return
 ; Return
 
 
-CapsLock & k::
-If GetKeyState("Shift")
- Send {U+209A} ;
-else
- Send {U+2096} ;
-Return
+; CapsLock & k::
+; If GetKeyState("Shift")
+;  Send {U+209A} ;
+; else
+;  Send {U+2096} ;
+; Return
 
 
 SetMouseDelay, 0
@@ -204,7 +204,7 @@ presshome(){
 
 
 ; COLOR PICKER
-    CapsLock & 1::
+CapsLock & 1::
     MouseGetPos, MouseX, MouseY
     PixelGetColor, color, %MouseX%, %MouseY%
     color := color

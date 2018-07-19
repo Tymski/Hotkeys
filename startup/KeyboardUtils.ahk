@@ -8,16 +8,26 @@
 	Return
 
 
-// Hide title bar: Ctrl F2
+// Hide title bar and window borders: Ctrl F2 
 
-	
-	^F2::  WinSet, Style, -0xC00000, A
+	^F2::
+		WinActive("A")
+		WinGetPos, X, Y
+		WinSet, Style, -0xC40000 // Remove Titlebar and Borders (WS_CAPTION | WS_SIZEBOX)
+		WinMove, X,Y
+		WinMaximize
+	Return
+
+	^F3::
+		WinActive("A")
+		WinSet, Style, +0xC40000 // Add Titlebar and Borders (WS_CAPTION | WS_SIZEBOX)
+		WinMaximize
 	Return
 
 
 // Make window semi-transparent Ctrl f3
 
-	^F3:: 
+	^F4:: 
 		WinGet, currentTransparency, Transparent, A
 		currentTransparency := currentTransparency-10
 		if(currentTransparency < 0){ 
@@ -27,7 +37,7 @@
 	Return
 
 // Make window opaque ctrl f4
-	^F4::  
+	^F5::  
 		WinSet, Transparent, 255, A
 	Return
 
@@ -58,9 +68,9 @@
 		
 // NUMPAD UTILS
 	
-	NumpadIns::Ctrl
+	// NumpadIns::Ctrl
 	// Use Control PageUp Control PageDown0
-	NumpadClear::Enter
+	// NumpadClear::Enter
 	//^NumpadLeft::^+Tab
 	//^NumpadRight::^Tab
 	
