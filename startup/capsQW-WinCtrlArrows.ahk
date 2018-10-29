@@ -164,6 +164,11 @@ CapsLock & =::
     send {Right}
 Return
 
+CapsLock & ,::
+    send {Right}
+    send `,
+Return
+
 
 pressend(){
     If GetKeyState("Shift")
@@ -294,3 +299,18 @@ CapsLock & 1::
         return left ? w str : str w
     }
 ; END OF COLOR PICKER
+
+
+
+CapsLock & d::
+    WinActivate, ahk_exe Code.exe
+Return
+
+
+CapsLock & e::
+    WinActivate, ahk_exe chrome.exe
+Return
+
+CapsLock & f::
+    WinActivate, ahk_exe Unity.exe
+Return

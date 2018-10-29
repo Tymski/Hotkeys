@@ -12,9 +12,10 @@
 
 	^F2::
 		WinActive("A")
-		WinGetPos, X, Y
+		// WinGetPos, X, Y
 		WinSet, Style, -0xC40000 // Remove Titlebar and Borders (WS_CAPTION | WS_SIZEBOX)
-		WinMove, X,Y
+		// WinMove, X,Y
+		WinMove, 0,0
 		WinMaximize
 	Return
 
