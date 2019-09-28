@@ -1,4 +1,5 @@
 #NoTrayIcon
+#SingleInstance, force
 
 SetCapsLockState, alwaysoff
 
@@ -108,11 +109,27 @@ send ^s
 send {F13}
 Return
 
+; CapsLock & l::
+; send console.log();
+; send {left}{left}
+; sleep, 200
+; send {Escape}
+; Return
+
 CapsLock & l::
-send console.log();
-send {left}{left}
-sleep, 200
-send {Escape}
+send {right}
+Return
+
+CapsLock & k::
+send {down}
+Return
+
+CapsLock & i::
+send {up}
+Return
+
+CapsLock & j::
+send {left}
 Return
 
 ; Alt & l::
@@ -164,10 +181,37 @@ CapsLock & =::
     send {Right}
 Return
 
+
+
+
 CapsLock & ,::
     send {Right}
     send `,
 Return
+
+CapsLock & .::
+    send {Right}
+    send `.
+Return
+
+CapsLock & Right::
+    pressend()
+Return
+
+CapsLock & Left::
+    presshome()
+Return
+
+CapsLock & Down::
+    send {Down}{Down}{Down}{Down}{Down}
+Return
+
+CapsLock & Up::
+    send {Up}{Up}{Up}{Up}{Up}
+Return
+
+
+
 
 
 pressend(){
@@ -302,15 +346,25 @@ CapsLock & 1::
 
 
 
+; CapsLock & d::
+;     WinActivate, ahk_exe Code.exe
+; Return
+
+
+; CapsLock & e::
+;     WinActivate, ahk_exe chrome.exe
+; Return
+
+; CapsLock & f::
+;     WinActivate, ahk_exe Unity.exe
+; Return
+
+; Send, {LWin Down}{RCtrl Down}{Right}{RCtrl Up}{LWin Up}		
+
 CapsLock & d::
-    WinActivate, ahk_exe Code.exe
-Return
-
-
-CapsLock & e::
-    WinActivate, ahk_exe chrome.exe
+    Send, {AltDown}{ShiftDown}{Esc}{ShiftUp}{AltUp}
 Return
 
 CapsLock & f::
-    WinActivate, ahk_exe Unity.exe
+    Send, {AltDown}{Esc}{AltUp}
 Return

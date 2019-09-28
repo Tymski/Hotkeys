@@ -42,6 +42,7 @@
 		WinSet, Transparent, 255, A
 	Return
 
+
 // Change Volume: Shift Numpad+ Shift Numpad-
 
 	<+NumpadAdd::Volume_Up
